@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomNum: 0
-  seedStr: 114
+  seedStr: 
 --- !u!4 &2024790119
 Transform:
   m_ObjectHideFlags: 0

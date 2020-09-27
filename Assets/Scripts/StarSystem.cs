@@ -26,16 +26,17 @@ public class StarSystem : MonoBehaviour
     {        
         int origin = GameManager.instance.randomNum;
         //生成本星系用种子
-        int mySeed = Convert.ToInt32(System.Math.Ceiling(GameManager.instance.GetRandomNum((origin + 33 + _id).ToString()) * 1000));
-        var myArray = Mathf.Abs(mySeed).ToArray_t();
+        int mySeed =Mathf.Abs( Convert.ToInt32(System.Math.Ceiling(GameManager.instance.GetRandomNum((origin + 33 + _id).ToString()) * 1000)));
+        var myArray = mySeed.ToArray_t();
         int type = myArray[myArray.Length - 2];
+        stellar.data.stellarClassification = Enum.GetName(typeof(StellarClassification), type);
         if (type == 0)
         {
             stellar.data.stellarClassification = "M";
         }
-        stellar.data.stellarClassification = Enum.GetName(typeof(StellarClassification), type);       
         Debug.Log(mySeed);
         var sc = (StellarClassification)type;
+        stellar.data.metalAmount = GameManager.instance.GetRandomRange(1, 4, mySeed);
         switch (sc) 
         {
             case StellarClassification.O:
@@ -77,7 +78,7 @@ public class StarSystem : MonoBehaviour
             default:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(2400, 3700, mySeed);
                 stellar.data.age = GameManager.instance.GetRandomRange(1500000, 30000000, mySeed);
-                break;
+                break;               
         }
     }
 
