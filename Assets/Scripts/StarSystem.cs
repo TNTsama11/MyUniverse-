@@ -40,33 +40,43 @@ public class StarSystem : MonoBehaviour
         {
             case StellarClassification.O:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(30000, 52000, mySeed); //不同类型不同温度
+                stellar.data.age = GameManager.instance.GetRandomRange(100, 400, mySeed); //年龄
                 break;
             case StellarClassification.B:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(10000, 30000, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(400, 5000, mySeed);
                 break;
             case StellarClassification.A:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(7500, 10000, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(10000, 100000, mySeed);
                 break;
             case StellarClassification.F:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(6000, 7500, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(100000, 1000000, mySeed);
                 break;
             case StellarClassification.G:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(5200, 6000, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(100000, 1000000, mySeed);
                 break;
             case StellarClassification.K:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(3700, 5200, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(150000, 3000000, mySeed);
                 break;
             case StellarClassification.M:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(2400, 3700, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(1500000, 30000000, mySeed);
                 break;
             case StellarClassification.L:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(1300, 2400, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(30000000, 150000000, mySeed);
                 break;
             case StellarClassification.T:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(550, 1300, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(30000000, 150000000, mySeed);
                 break;
             default:
                 stellar.data.temperature = GameManager.instance.GetRandomRange(2400, 3700, mySeed);
+                stellar.data.age = GameManager.instance.GetRandomRange(1500000, 30000000, mySeed);
                 break;
         }
     }
